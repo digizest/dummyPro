@@ -1,0 +1,34 @@
+<!-- <label><input type="text" name="title" [(ngModel)]="title" placeholder="Enter Product Name"/></label>
+<br>
+<label><input type="text" name="description" [(ngModel)]="description" placeholder="Enter Description"/></label>
+<br>
+<label><input type="text" name="price" [(ngModel)]="price" placeholder="Enter Price"/></label>
+<br/>
+<button (click)="(updateFlag) ?  updateProduct() : addProduct()  ">{{( updateFlag ) ? "Update Product" : "Add Product"}}</button> -->
+
+<div class="container" style="display: grid;">
+    <div style="margin: auto;">
+        <div style="margin-top: 150px;">
+<form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Add New Product</label>
+      <br>
+      <input type="text" name="title" [(ngModel)]="title" placeholder="Enter Product Name"/>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Description</label>
+      <br>
+      <input type="text" name="description" [(ngModel)]="description" placeholder="Enter Description"/>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Price</label>
+      <br>
+        <input type="text" name="price" [(ngModel)]="price" placeholder="Enter Price"/>
+    </div>
+    <button class="btn btn-primary" (click)="(updateFlag) ?  updateProduct() : addProduct()  ">{{( updateFlag ) ? "Update Product" : "Add Product"}}</button>
+  </form>
+</div>
+</div>
+</div>
+
+
