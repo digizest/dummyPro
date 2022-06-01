@@ -14,6 +14,9 @@ export class AddProductComponent implements OnInit {
   public  price: any ;
   public updateFlag : boolean = false
   public productToUpdate : any 
+  public countryName : string = "";
+  public countryPrice : number  = 0;
+  public isInvalid : boolean = false
   
   constructor( private httpService  : RestServiceService , private route : Router ) { 
     //get data to update
@@ -35,7 +38,10 @@ export class AddProductComponent implements OnInit {
   
   addProduct()
   {
-    let data = { title : this.title , description : this.description ,price : this.price }
+    let data = { title : this.title , description : this.description ,price : { basePrice : this.price }  , contry : [{name : this.countryName, price :this.countryPrice }] }
+
+    console.log("product info before adding",data);
+    
     this.httpService.addProduct(data).subscribe((data)=>{
      if(data)
      {
@@ -69,5 +75,11 @@ export class AddProductComponent implements OnInit {
 
     })   
 
+  }
+
+  validateProduct( productFrom  : any)
+  {
+    console.log("form submit logs"  , productFrom);
+    
   }
 }

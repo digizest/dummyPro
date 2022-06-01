@@ -15,7 +15,9 @@
             <th>Id</th>
             <th>Title</th>
             <th>Description</th>
-            <th>Price</th>
+            <th>Price [ Base Price ]</th>
+            <th>isActive</th>
+            <th>country</th>
             <th></th>
             <th></th>
         </tr>
@@ -23,7 +25,12 @@
                 <td>{{product._id }}</td>
                 <td>{{product.title }}</td>
                 <td>{{product.description}}</td>
-                <td>{{product.price}}</td>
+                <td>{{product.price.basePrice }}</td>
+                <td>
+                    <ul *ngFor="let country of product.contry">
+                        <li>{{ country.name  + " , " + country.price  }}</li>
+                    </ul>
+                </td>
                 <td><button class="btn btn-success" (click)="updateProduct(product._id , i)">Edit</button></td>
                 <td><button class="btn btn-danger" (click)="deleteProduct(product._id , i)">Delete</button></td>
             </tr>

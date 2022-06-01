@@ -1,16 +1,15 @@
 /* eslint-disable prettier/prettier */
 import { Body, Controller, Delete, Get, Param, Patch, Post } from "@nestjs/common";
-import { productDto } from "./dto/user.dto";
-import { ProductService} from "./user.service";
+import { productDto } from "./dto/product.dto";
+import { ProductService} from "./product.service";
 
 @Controller("product")
-export class ab
+export class productController
 {
     constructor(private readonly userService : ProductService){}
     @Get(":productId")
     async findSingleProduct(@Param("productId") productId : string ) : Promise<any>
     {
-        console.log("single product api" , productId)
        return this.userService.findSingleProduct(productId);
     }
     @Get()

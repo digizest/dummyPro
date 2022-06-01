@@ -35,8 +35,8 @@ export class ProductListComponent implements OnInit {
   }
 
   updateProduct(id: any, index: any) {
-    console.log('updateProduct is clicked with id', id, index);
-    this.route.navigate(['/addproduct'], { state: this.products[index] });
+    console.log('updateProduct is clicked with id', id, index ,this.products[index]);
+    this.route.navigate(['/updateproduct'], { state: this.products[index] });
   }
 
   refreshProductTable() {
